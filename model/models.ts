@@ -23,6 +23,8 @@ export * from './ezsignfolderEditObjectV1Response';
 export * from './ezsignfolderGetObjectV1Response';
 export * from './ezsignfolderRequest';
 export * from './ezsignfolderRequestCompound';
+export * from './ezsignfolderSendV1Request';
+export * from './ezsignfolderSendV1Response';
 export * from './ezsignfoldersignerassociationCreateObjectV1Request';
 export * from './ezsignfoldersignerassociationCreateObjectV1Response';
 export * from './ezsignfoldersignerassociationCreateObjectV1ResponseMPayload';

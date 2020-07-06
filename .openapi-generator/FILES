@@ -36,6 +36,8 @@ model/./ezsignfolderEditObjectV1Response.ts
 model/./ezsignfolderGetObjectV1Response.ts
 model/./ezsignfolderRequest.ts
 model/./ezsignfolderRequestCompound.ts
+model/./ezsignfolderSendV1Request.ts
+model/./ezsignfolderSendV1Response.ts
 model/./ezsignfoldersignerassociationCreateObjectV1Request.ts
 model/./ezsignfoldersignerassociationCreateObjectV1Response.ts
 model/./ezsignfoldersignerassociationCreateObjectV1ResponseMPayload.ts

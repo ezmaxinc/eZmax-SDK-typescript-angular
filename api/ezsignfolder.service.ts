@@ -24,6 +24,8 @@ import { EzsignfolderDeleteObjectV1Response } from '../model/models';
 import { EzsignfolderEditObjectV1Request } from '../model/models';
 import { EzsignfolderEditObjectV1Response } from '../model/models';
 import { EzsignfolderGetObjectV1Response } from '../model/models';
+import { EzsignfolderSendV1Request } from '../model/models';
+import { EzsignfolderSendV1Response } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -370,6 +372,73 @@ export class EzsignfolderService {
         }
 
         return this.httpClient.get<EzsignfolderGetObjectV1Response>(`${this.configuration.basePath}/1/object/ezsignfolder/${encodeURIComponent(String(pkiEzsignfolderID))}`,
+            {
+                responseType: <any>responseType,
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Send the Ezsignfolder to the signatories for signature
+     * @param pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param ezsignfolderSendV1Request 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsignfolderSendV1Response>;
+    public ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsignfolderSendV1Response>>;
+    public ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsignfolderSendV1Response>>;
+    public ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (pkiEzsignfolderID === null || pkiEzsignfolderID === undefined) {
+            throw new Error('Required parameter pkiEzsignfolderID was null or undefined when calling ezsignfolderSendV1.');
+        }
+        if (ezsignfolderSendV1Request === null || ezsignfolderSendV1Request === undefined) {
+            throw new Error('Required parameter ezsignfolderSendV1Request was null or undefined when calling ezsignfolderSendV1.');
+        }
+
+        let headers = this.defaultHeaders;
+
+        // authentication (Authorization) required
+        if (this.configuration.apiKeys) {
+            const key: string | undefined = this.configuration.apiKeys["Authorization"] || this.configuration.apiKeys["Authorization"];
+            if (key) {
+                headers = headers.set('Authorization', key);
+            }
+        }
+
+        let httpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (httpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                'application/json'
+            ];
+            httpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (httpHeaderAcceptSelected !== undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            headers = headers.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType: 'text' | 'json' = 'json';
+        if(httpHeaderAcceptSelected && httpHeaderAcceptSelected.startsWith('text')) {
+            responseType = 'text';
+        }
+
+        return this.httpClient.post<EzsignfolderSendV1Response>(`${this.configuration.basePath}/1/object/ezsignfolder/${encodeURIComponent(String(pkiEzsignfolderID))}/send`,
+            ezsignfolderSendV1Request,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
