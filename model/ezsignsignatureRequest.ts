@@ -40,9 +40,9 @@ export interface EzsignsignatureRequest {
      */
     eEzsignsignatureType: EzsignsignatureRequest.EEzsignsignatureTypeEnum;
     /**
-     * A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation.
+     * A reference to a valid Ezsigndocument.  That value is returned after a successful Ezsigndocumentation Creation.
      */
-    fkiEzsignfolderID: number;
+    fkiEzsigndocumentID: number;
 }
 export namespace EzsignsignatureRequest {
     export type EEzsignsignatureTypeEnum = 'Acknowledgement' | 'Handwritten' | 'Initials' | 'Name';
