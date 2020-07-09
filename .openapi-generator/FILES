@@ -7,6 +7,7 @@ api/api.ts
 api/ezsigndocument.service.ts
 api/ezsignfolder.service.ts
 api/ezsignfoldersignerassociation.service.ts
+api/ezsignsignature.service.ts
 configuration.ts
 encoder.ts
 git_push.sh
@@ -47,6 +48,15 @@ model/./ezsignfoldersignerassociationEditObjectV1Response.ts
 model/./ezsignfoldersignerassociationGetObjectV1Response.ts
 model/./ezsignfoldersignerassociationRequest.ts
 model/./ezsignfoldersignerassociationRequestCompound.ts
+model/./ezsignsignatureCreateObjectV1Request.ts
+model/./ezsignsignatureCreateObjectV1Response.ts
+model/./ezsignsignatureCreateObjectV1ResponseMPayload.ts
+model/./ezsignsignatureDeleteObjectV1Response.ts
+model/./ezsignsignatureEditObjectV1Request.ts
+model/./ezsignsignatureEditObjectV1Response.ts
+model/./ezsignsignatureGetObjectV1Response.ts
+model/./ezsignsignatureRequest.ts
+model/./ezsignsignatureRequestCompound.ts
 model/./ezsignsignerRequest.ts
 model/./ezsignsignerRequestCompound.ts
 model/./ezsignsignerRequestCompoundContact.ts
