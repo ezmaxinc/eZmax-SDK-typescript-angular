@@ -6,6 +6,7 @@ import { ActivesessionService } from './api/activesession.service';
 import { EzsigndocumentService } from './api/ezsigndocument.service';
 import { EzsignfolderService } from './api/ezsignfolder.service';
 import { EzsignfoldersignerassociationService } from './api/ezsignfoldersignerassociation.service';
+import { EzsignsignatureService } from './api/ezsignsignature.service';
 
 @NgModule({
   imports:      [],

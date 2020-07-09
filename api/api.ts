@@ -6,4 +6,6 @@ export * from './ezsignfolder.service';
 import { EzsignfolderService } from './ezsignfolder.service';
 export * from './ezsignfoldersignerassociation.service';
 import { EzsignfoldersignerassociationService } from './ezsignfoldersignerassociation.service';
-export const APIS = [ActivesessionService, EzsigndocumentService, EzsignfolderService, EzsignfoldersignerassociationService];
+export * from './ezsignsignature.service';
+import { EzsignsignatureService } from './ezsignsignature.service';
+export const APIS = [ActivesessionService, EzsigndocumentService, EzsignfolderService, EzsignfoldersignerassociationService, EzsignsignatureService];

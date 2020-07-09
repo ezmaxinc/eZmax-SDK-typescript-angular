@@ -18,12 +18,12 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 import { CommonResponseError } from '../model/models';
-import { EzsigndocumentCreateObjectV1Request } from '../model/models';
-import { EzsigndocumentCreateObjectV1Response } from '../model/models';
-import { EzsigndocumentDeleteObjectV1Response } from '../model/models';
-import { EzsigndocumentEditObjectV1Request } from '../model/models';
-import { EzsigndocumentEditObjectV1Response } from '../model/models';
-import { EzsigndocumentGetObjectV1Response } from '../model/models';
+import { EzsignsignatureCreateObjectV1Request } from '../model/models';
+import { EzsignsignatureCreateObjectV1Response } from '../model/models';
+import { EzsignsignatureDeleteObjectV1Response } from '../model/models';
+import { EzsignsignatureEditObjectV1Request } from '../model/models';
+import { EzsignsignatureEditObjectV1Response } from '../model/models';
+import { EzsignsignatureGetObjectV1Response } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -33,7 +33,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class EzsigndocumentService {
+export class EzsignsignatureService {
 
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders = new HttpHeaders();
@@ -91,18 +91,18 @@ export class EzsigndocumentService {
     }
 
     /**
-     * Create a new Ezsigndocument
+     * Create a new Ezsignsignature
      * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-     * @param ezsigndocumentCreateObjectV1Request 
+     * @param ezsignsignatureCreateObjectV1Request 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsigndocumentCreateObjectV1Response>;
-    public ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsigndocumentCreateObjectV1Response>>;
-    public ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsigndocumentCreateObjectV1Response>>;
-    public ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (ezsigndocumentCreateObjectV1Request === null || ezsigndocumentCreateObjectV1Request === undefined) {
-            throw new Error('Required parameter ezsigndocumentCreateObjectV1Request was null or undefined when calling ezsigndocumentCreateObjectV1.');
+    public ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsignsignatureCreateObjectV1Response>;
+    public ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsignsignatureCreateObjectV1Response>>;
+    public ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsignsignatureCreateObjectV1Response>>;
+    public ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (ezsignsignatureCreateObjectV1Request === null || ezsignsignatureCreateObjectV1Request === undefined) {
+            throw new Error('Required parameter ezsignsignatureCreateObjectV1Request was null or undefined when calling ezsignsignatureCreateObjectV1.');
         }
 
         let headers = this.defaultHeaders;
@@ -142,8 +142,8 @@ export class EzsigndocumentService {
             responseType = 'text';
         }
 
-        return this.httpClient.post<EzsigndocumentCreateObjectV1Response>(`${this.configuration.basePath}/1/object/ezsigndocument`,
-            ezsigndocumentCreateObjectV1Request,
+        return this.httpClient.post<EzsignsignatureCreateObjectV1Response>(`${this.configuration.basePath}/1/object/ezsignsignature`,
+            ezsignsignatureCreateObjectV1Request,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -155,17 +155,17 @@ export class EzsigndocumentService {
     }
 
     /**
-     * Delete an existing Ezsigndocument
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * Delete an existing Ezsignsignature
+     * @param pkiEzsignsignatureID The unique ID of the Ezsignsignature
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsigndocumentDeleteObjectV1Response>;
-    public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsigndocumentDeleteObjectV1Response>>;
-    public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsigndocumentDeleteObjectV1Response>>;
-    public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (pkiEzsigndocumentID === null || pkiEzsigndocumentID === undefined) {
-            throw new Error('Required parameter pkiEzsigndocumentID was null or undefined when calling ezsigndocumentDeleteObjectV1.');
+    public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsignsignatureDeleteObjectV1Response>;
+    public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsignsignatureDeleteObjectV1Response>>;
+    public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsignsignatureDeleteObjectV1Response>>;
+    public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (pkiEzsignsignatureID === null || pkiEzsignsignatureID === undefined) {
+            throw new Error('Required parameter pkiEzsignsignatureID was null or undefined when calling ezsignsignatureDeleteObjectV1.');
         }
 
         let headers = this.defaultHeaders;
@@ -196,7 +196,7 @@ export class EzsigndocumentService {
             responseType = 'text';
         }
 
-        return this.httpClient.delete<EzsigndocumentDeleteObjectV1Response>(`${this.configuration.basePath}/1/object/ezsigndocument/${encodeURIComponent(String(pkiEzsigndocumentID))}`,
+        return this.httpClient.delete<EzsignsignatureDeleteObjectV1Response>(`${this.configuration.basePath}/1/object/ezsignsignature/${encodeURIComponent(String(pkiEzsignsignatureID))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -208,21 +208,21 @@ export class EzsigndocumentService {
     }
 
     /**
-     * Modify an existing Ezsigndocument
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
-     * @param ezsigndocumentEditObjectV1Request 
+     * Modify an existing Ezsignsignature
+     * @param pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param ezsignsignatureEditObjectV1Request 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public ezsigndocumentEditObjectV1(pkiEzsigndocumentID: number, ezsigndocumentEditObjectV1Request: EzsigndocumentEditObjectV1Request, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsigndocumentEditObjectV1Response>;
-    public ezsigndocumentEditObjectV1(pkiEzsigndocumentID: number, ezsigndocumentEditObjectV1Request: EzsigndocumentEditObjectV1Request, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsigndocumentEditObjectV1Response>>;
-    public ezsigndocumentEditObjectV1(pkiEzsigndocumentID: number, ezsigndocumentEditObjectV1Request: EzsigndocumentEditObjectV1Request, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsigndocumentEditObjectV1Response>>;
-    public ezsigndocumentEditObjectV1(pkiEzsigndocumentID: number, ezsigndocumentEditObjectV1Request: EzsigndocumentEditObjectV1Request, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (pkiEzsigndocumentID === null || pkiEzsigndocumentID === undefined) {
-            throw new Error('Required parameter pkiEzsigndocumentID was null or undefined when calling ezsigndocumentEditObjectV1.');
+    public ezsignsignatureEditObjectV1(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsignsignatureEditObjectV1Response>;
+    public ezsignsignatureEditObjectV1(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsignsignatureEditObjectV1Response>>;
+    public ezsignsignatureEditObjectV1(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsignsignatureEditObjectV1Response>>;
+    public ezsignsignatureEditObjectV1(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (pkiEzsignsignatureID === null || pkiEzsignsignatureID === undefined) {
+            throw new Error('Required parameter pkiEzsignsignatureID was null or undefined when calling ezsignsignatureEditObjectV1.');
         }
-        if (ezsigndocumentEditObjectV1Request === null || ezsigndocumentEditObjectV1Request === undefined) {
-            throw new Error('Required parameter ezsigndocumentEditObjectV1Request was null or undefined when calling ezsigndocumentEditObjectV1.');
+        if (ezsignsignatureEditObjectV1Request === null || ezsignsignatureEditObjectV1Request === undefined) {
+            throw new Error('Required parameter ezsignsignatureEditObjectV1Request was null or undefined when calling ezsignsignatureEditObjectV1.');
         }
 
         let headers = this.defaultHeaders;
@@ -262,8 +262,8 @@ export class EzsigndocumentService {
             responseType = 'text';
         }
 
-        return this.httpClient.put<EzsigndocumentEditObjectV1Response>(`${this.configuration.basePath}/1/object/ezsigndocument/${encodeURIComponent(String(pkiEzsigndocumentID))}`,
-            ezsigndocumentEditObjectV1Request,
+        return this.httpClient.put<EzsignsignatureEditObjectV1Response>(`${this.configuration.basePath}/1/object/ezsignsignature/${encodeURIComponent(String(pkiEzsignsignatureID))}`,
+            ezsignsignatureEditObjectV1Request,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -275,17 +275,17 @@ export class EzsigndocumentService {
     }
 
     /**
-     * Retrieve an existing Ezsigndocument\&#39;s children IDs
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * Retrieve an existing Ezsignsignature\&#39;s children IDs
+     * @param pkiEzsignsignatureID The unique ID of the Ezsignsignature
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public ezsigndocumentGetObjectGetChildrenV1(pkiEzsigndocumentID: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<any>;
-    public ezsigndocumentGetObjectGetChildrenV1(pkiEzsigndocumentID: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<any>>;
-    public ezsigndocumentGetObjectGetChildrenV1(pkiEzsigndocumentID: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<any>>;
-    public ezsigndocumentGetObjectGetChildrenV1(pkiEzsigndocumentID: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (pkiEzsigndocumentID === null || pkiEzsigndocumentID === undefined) {
-            throw new Error('Required parameter pkiEzsigndocumentID was null or undefined when calling ezsigndocumentGetObjectGetChildrenV1.');
+    public ezsignsignatureGetObjectGetChildrenV1(pkiEzsignsignatureID: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<any>;
+    public ezsignsignatureGetObjectGetChildrenV1(pkiEzsignsignatureID: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<any>>;
+    public ezsignsignatureGetObjectGetChildrenV1(pkiEzsignsignatureID: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<any>>;
+    public ezsignsignatureGetObjectGetChildrenV1(pkiEzsignsignatureID: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (pkiEzsignsignatureID === null || pkiEzsignsignatureID === undefined) {
+            throw new Error('Required parameter pkiEzsignsignatureID was null or undefined when calling ezsignsignatureGetObjectGetChildrenV1.');
         }
 
         let headers = this.defaultHeaders;
@@ -316,7 +316,7 @@ export class EzsigndocumentService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<any>(`${this.configuration.basePath}/1/object/ezsigndocument/${encodeURIComponent(String(pkiEzsigndocumentID))}/getChildren`,
+        return this.httpClient.get<any>(`${this.configuration.basePath}/1/object/ezsignsignature/${encodeURIComponent(String(pkiEzsignsignatureID))}/getChildren`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -328,17 +328,17 @@ export class EzsigndocumentService {
     }
 
     /**
-     * Retrieve an existing Ezsigndocument
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * Retrieve an existing Ezsignsignature
+     * @param pkiEzsignsignatureID The unique ID of the Ezsignsignature
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsigndocumentGetObjectV1Response>;
-    public ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsigndocumentGetObjectV1Response>>;
-    public ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsigndocumentGetObjectV1Response>>;
-    public ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (pkiEzsigndocumentID === null || pkiEzsigndocumentID === undefined) {
-            throw new Error('Required parameter pkiEzsigndocumentID was null or undefined when calling ezsigndocumentGetObjectV1.');
+    public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<EzsignsignatureGetObjectV1Response>;
+    public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<EzsignsignatureGetObjectV1Response>>;
+    public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<EzsignsignatureGetObjectV1Response>>;
+    public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (pkiEzsignsignatureID === null || pkiEzsignsignatureID === undefined) {
+            throw new Error('Required parameter pkiEzsignsignatureID was null or undefined when calling ezsignsignatureGetObjectV1.');
         }
 
         let headers = this.defaultHeaders;
@@ -369,7 +369,7 @@ export class EzsigndocumentService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<EzsigndocumentGetObjectV1Response>(`${this.configuration.basePath}/1/object/ezsigndocument/${encodeURIComponent(String(pkiEzsigndocumentID))}`,
+        return this.httpClient.get<EzsignsignatureGetObjectV1Response>(`${this.configuration.basePath}/1/object/ezsignsignature/${encodeURIComponent(String(pkiEzsignsignatureID))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,

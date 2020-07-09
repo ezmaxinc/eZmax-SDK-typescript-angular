@@ -9,15 +9,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsigndocumentRequest } from './ezsigndocumentRequest';
-import { EzsigndocumentRequestCompound } from './ezsigndocumentRequestCompound';
+import { CommonResponseObjDebug } from './commonResponseObjDebug';
+import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
+import { CommonResponse } from './commonResponse';
 
 
 /**
- * Request for the /1/object/ezsigndocument/createObject API Request
+ * Response for the /1/object/ezsignsignature/editObject API Request
  */
-export interface EzsigndocumentCreateObjectV1Request { 
-    objEzsigndocument?: EzsigndocumentRequest;
-    objEzsigndocumentCompound?: EzsigndocumentRequestCompound;
+export interface EzsignsignatureEditObjectV1Response { 
+    objDebugPayload?: CommonResponseObjDebugPayload;
+    objDebug?: CommonResponseObjDebug;
 }
 
