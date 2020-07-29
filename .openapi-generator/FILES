@@ -4,6 +4,7 @@ README.md
 api.module.ts
 api/activesession.service.ts
 api/api.ts
+api/ezsignWebhook.service.ts
 api/ezsigndocument.service.ts
 api/ezsignfolder.service.ts
 api/ezsignfoldersignerassociation.service.ts
@@ -14,11 +15,13 @@ git_push.sh
 index.ts
 model/./activesessionGetCurrentV1Response.ts
 model/./activesessionGetCurrentV1ResponseMPayload.ts
+model/./attemptResponse.ts
 model/./commonResponse.ts
 model/./commonResponseError.ts
 model/./commonResponseObjDebug.ts
 model/./commonResponseObjDebugPayload.ts
 model/./commonResponseObjSQLQuery.ts
+model/./commonWebhook.ts
 model/./ezsigndocumentCreateObjectV1Request.ts
 model/./ezsigndocumentCreateObjectV1Response.ts
 model/./ezsigndocumentCreateObjectV1ResponseMPayload.ts
@@ -28,6 +31,8 @@ model/./ezsigndocumentEditObjectV1Response.ts
 model/./ezsigndocumentGetObjectV1Response.ts
 model/./ezsigndocumentRequest.ts
 model/./ezsigndocumentRequestCompound.ts
+model/./ezsigndocumentResponse.ts
+model/./ezsigndocumentResponseCompound.ts
 model/./ezsignfolderCreateObjectV1Request.ts
 model/./ezsignfolderCreateObjectV1Response.ts
 model/./ezsignfolderCreateObjectV1ResponseMPayload.ts
@@ -37,6 +42,8 @@ model/./ezsignfolderEditObjectV1Response.ts
 model/./ezsignfolderGetObjectV1Response.ts
 model/./ezsignfolderRequest.ts
 model/./ezsignfolderRequestCompound.ts
+model/./ezsignfolderResponse.ts
+model/./ezsignfolderResponseCompound.ts
 model/./ezsignfolderSendV1Request.ts
 model/./ezsignfolderSendV1Response.ts
 model/./ezsignfoldersignerassociationCreateObjectV1Request.ts
@@ -60,5 +67,10 @@ model/./ezsignsignatureRequestCompound.ts
 model/./ezsignsignerRequest.ts
 model/./ezsignsignerRequestCompound.ts
 model/./ezsignsignerRequestCompoundContact.ts
+model/./webhookEzsignDocumentCompleted.ts
+model/./webhookEzsignDocumentCompletedAllOf.ts
+model/./webhookEzsignFolderCompleted.ts
+model/./webhookEzsignFolderCompletedAllOf.ts
+model/./webhookResponse.ts
 model/models.ts
 variables.ts

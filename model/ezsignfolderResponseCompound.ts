@@ -9,15 +9,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsignsignatureRequest } from './ezsignsignatureRequest';
+import { EzsignfolderResponse } from './ezsignfolderResponse';
 
 
 /**
- * An Ezsignsignature Object and children to create a complete structure
+ * An Ezsignfolder Object and children to create a complete structure
  */
-export interface EzsignsignatureRequestCompound extends EzsignsignatureRequest { 
+export interface EzsignfolderResponseCompound extends EzsignfolderResponse { 
 }
-export namespace EzsignsignatureRequestCompound {
+export namespace EzsignfolderResponseCompound {
 }
 
 

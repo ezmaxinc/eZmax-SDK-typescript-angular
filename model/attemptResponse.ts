@@ -9,15 +9,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsignsignatureRequest } from './ezsignsignatureRequest';
 
 
 /**
- * An Ezsignsignature Object and children to create a complete structure
+ * An Attempt object
  */
-export interface EzsignsignatureRequestCompound extends EzsignsignatureRequest { 
+export interface AttemptResponse { 
+    /**
+     * Date and time of the attempt in UCT.
+     */
+    dtAttemptStart: string;
+    /**
+     * The Success or Failure message of the attempt when we tried to call the URL to deliver the webhook event.
+     */
+    sAttemptResult: string;
+    /**
+     * The number of second it took to process the webhook or get an error
+     */
+    iAttemptDuration: number;
 }
-export namespace EzsignsignatureRequestCompound {
-}
-
 

@@ -9,15 +9,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsignsignatureRequest } from './ezsignsignatureRequest';
+import { AttemptResponse } from './attemptResponse';
+import { WebhookEzsignDocumentCompletedAllOf } from './webhookEzsignDocumentCompletedAllOf';
+import { WebhookResponse } from './webhookResponse';
+import { EzsigndocumentResponseCompound } from './ezsigndocumentResponseCompound';
+import { CommonWebhook } from './commonWebhook';
 
 
 /**
- * An Ezsignsignature Object and children to create a complete structure
+ * This is the base Webhook object
  */
-export interface EzsignsignatureRequestCompound extends EzsignsignatureRequest { 
+export interface WebhookEzsignDocumentCompleted { 
+    objEzsigndocument: EzsigndocumentResponseCompound;
+    objWebhook: WebhookResponse;
+    /**
+     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
+     */
+    a_objAttempt: Array<AttemptResponse>;
 }
-export namespace EzsignsignatureRequestCompound {
-}
-
 
