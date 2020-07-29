@@ -9,15 +9,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsignsignatureRequest } from './ezsignsignatureRequest';
 
 
 /**
- * An Ezsignsignature Object and children to create a complete structure
+ * An Ezsigndocument Object
  */
-export interface EzsignsignatureRequestCompound extends EzsignsignatureRequest { 
+export interface EzsigndocumentResponse { 
+    /**
+     * A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation.
+     */
+    fkiEzsignfolderID: number;
+    /**
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     */
+    dtEzsigndocumentDuedate: string;
+    /**
+     * The ID of the language, Valid values are: 1. French 2. English
+     */
+    fkiLanguageID: number;
+    /**
+     * The actual file name that will be used when downloading or attaching to an email.
+     */
+    sEzsigndocumentFilename: string;
+    /**
+     * The name of the document that will be presented to Ezsignfoldersignerassociations
+     */
+    sEzsigndocumentName: string;
 }
-export namespace EzsignsignatureRequestCompound {
-}
-
 

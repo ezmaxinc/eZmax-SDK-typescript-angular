@@ -14,7 +14,7 @@
 /**
  * An Ezsignfolder Object
  */
-export interface EzsignfolderRequest { 
+export interface EzsignfolderResponse { 
     /**
      * The Ezsign Folder Type ID. This value can be queried by the API and is also visible in the admin interface.  There are two types of Ezsignfoldertype. **User** and **Shared**. **User** can only be seen by the user who created the folder or its assistants. Access to **Shared** folders are configurable for access and email delivery. You should typically choose a **Shared** type here.
      */
@@ -34,9 +34,9 @@ export interface EzsignfolderRequest {
     /**
      * Frequency at which reminders will be sent to signers that haven\'t signed the documents
      */
-    eEzsignfolderSendreminderfrequency: EzsignfolderRequest.EEzsignfolderSendreminderfrequencyEnum;
+    eEzsignfolderSendreminderfrequency: EzsignfolderResponse.EEzsignfolderSendreminderfrequencyEnum;
 }
-export namespace EzsignfolderRequest {
+export namespace EzsignfolderResponse {
     export type EEzsignfolderSendreminderfrequencyEnum = 'None' | 'Daily' | 'Weekly';
     export const EEzsignfolderSendreminderfrequencyEnum = {
         None: 'None' as EEzsignfolderSendreminderfrequencyEnum,
