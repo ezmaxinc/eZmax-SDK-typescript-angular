@@ -11,14 +11,9 @@
  */
 import { FieldEEzsignfolderStep } from './fieldEEzsignfolderStep';
 import { FieldEEzsignfolderSendreminderfrequency } from './fieldEEzsignfolderSendreminderfrequency';
-import { CommonAudit } from './commonAudit';
-import { EzsignfolderResponseAllOf } from './ezsignfolderResponseAllOf';
 
 
-/**
- * An Ezsignfolder Object
- */
-export interface EzsignfolderResponse { 
+export interface EzsignfolderResponseAllOf { 
     /**
      * The unique ID of the Ezsignfoldertype.    This value can be queried by the API and is also visible in the admin interface.    There are two types of Ezsignfoldertype. **User** and **Shared**. **User** can only be seen by the user who created the folder or its assistants. Access to **Shared** folders are configurable for access and email delivery. You should typically choose a **Shared** type here.
      */
@@ -53,29 +48,5 @@ export interface EzsignfolderResponse {
      * The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely.
      */
     dtEzsignfolderClose: string;
-    /**
-     * The id of the User that created the object.
-     */
-    fkiUserIDCreated: number;
-    /**
-     * The id of the User that made the last modification on the object.
-     */
-    fkiUserIDModified: number;
-    /**
-     * The id of the API Key that created the object.
-     */
-    fkiApikeyIDCreated?: number;
-    /**
-     * The id of the API Key that made the last modification on the object.
-     */
-    fkiApikeyIDModified?: number;
-    /**
-     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
-     */
-    dtCreatedDate: string;
-    /**
-     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
-     */
-    dtModifiedDate: string;
 }
 

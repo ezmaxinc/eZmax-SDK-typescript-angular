@@ -10,14 +10,9 @@
  * Do not edit the class manually.
  */
 import { FieldEEzsigndocumentStep } from './fieldEEzsigndocumentStep';
-import { CommonAudit } from './commonAudit';
-import { EzsigndocumentResponseAllOf } from './ezsigndocumentResponseAllOf';
 
 
-/**
- * An Ezsigndocument Object
- */
-export interface EzsigndocumentResponse { 
+export interface EzsigndocumentResponseAllOf { 
     /**
      * The unique ID of the Ezsignfolder
      */
@@ -75,29 +70,5 @@ export interface EzsigndocumentResponse {
      * MD5 Hash of the final PDF Document after all signatures were applied to it.
      */
     sEzsigndocumentMD5signed: string;
-    /**
-     * The id of the User that created the object.
-     */
-    fkiUserIDCreated: number;
-    /**
-     * The id of the User that made the last modification on the object.
-     */
-    fkiUserIDModified: number;
-    /**
-     * The id of the API Key that created the object.
-     */
-    fkiApikeyIDCreated?: number;
-    /**
-     * The id of the API Key that made the last modification on the object.
-     */
-    fkiApikeyIDModified?: number;
-    /**
-     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
-     */
-    dtCreatedDate: string;
-    /**
-     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
-     */
-    dtModifiedDate: string;
 }
 

@@ -9,15 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsigndocumentRequest } from './ezsigndocumentRequest';
-import { EzsigndocumentRequestCompound } from './ezsigndocumentRequestCompound';
+import { FieldEEzsigndocumentStep } from './fieldEEzsigndocumentStep';
+import { EzsigndocumentResponse } from './ezsigndocumentResponse';
 
 
 /**
- * Request for the /1/object/ezsigndocument/createObject API Request
+ * Payload for the /1/object/ezsigndocument/getObject API Request
  */
-export interface EzsigndocumentCreateObjectV1Request { 
-    objEzsigndocument?: EzsigndocumentRequest;
-    objEzsigndocumentCompound?: EzsigndocumentRequestCompound;
+export interface EzsigndocumentGetObjectV1ResponseMPayload extends EzsigndocumentResponse { 
 }
 

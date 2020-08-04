@@ -9,15 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsigndocumentRequest } from './ezsigndocumentRequest';
-import { EzsigndocumentRequestCompound } from './ezsigndocumentRequestCompound';
+import { FieldEEzsignfolderStep } from './fieldEEzsignfolderStep';
+import { FieldEEzsignfolderSendreminderfrequency } from './fieldEEzsignfolderSendreminderfrequency';
+import { EzsignfolderResponse } from './ezsignfolderResponse';
 
 
 /**
- * Request for the /1/object/ezsigndocument/createObject API Request
+ * Payload for the /1/object/ezsignfolder/getObject API Request
  */
-export interface EzsigndocumentCreateObjectV1Request { 
-    objEzsigndocument?: EzsigndocumentRequest;
-    objEzsigndocumentCompound?: EzsigndocumentRequestCompound;
+export interface EzsignfolderGetObjectV1ResponseMPayload extends EzsignfolderResponse { 
 }
 

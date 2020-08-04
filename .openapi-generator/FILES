@@ -16,6 +16,7 @@ index.ts
 model/./activesessionGetCurrentV1Response.ts
 model/./activesessionGetCurrentV1ResponseMPayload.ts
 model/./attemptResponse.ts
+model/./commonAudit.ts
 model/./commonResponse.ts
 model/./commonResponseError.ts
 model/./commonResponseObjDebug.ts
@@ -29,9 +30,11 @@ model/./ezsigndocumentDeleteObjectV1Response.ts
 model/./ezsigndocumentEditObjectV1Request.ts
 model/./ezsigndocumentEditObjectV1Response.ts
 model/./ezsigndocumentGetObjectV1Response.ts
+model/./ezsigndocumentGetObjectV1ResponseMPayload.ts
 model/./ezsigndocumentRequest.ts
 model/./ezsigndocumentRequestCompound.ts
 model/./ezsigndocumentResponse.ts
+model/./ezsigndocumentResponseAllOf.ts
 model/./ezsigndocumentResponseCompound.ts
 model/./ezsignfolderCreateObjectV1Request.ts
 model/./ezsignfolderCreateObjectV1Response.ts
@@ -40,9 +43,11 @@ model/./ezsignfolderDeleteObjectV1Response.ts
 model/./ezsignfolderEditObjectV1Request.ts
 model/./ezsignfolderEditObjectV1Response.ts
 model/./ezsignfolderGetObjectV1Response.ts
+model/./ezsignfolderGetObjectV1ResponseMPayload.ts
 model/./ezsignfolderRequest.ts
 model/./ezsignfolderRequestCompound.ts
 model/./ezsignfolderResponse.ts
+model/./ezsignfolderResponseAllOf.ts
 model/./ezsignfolderResponseCompound.ts
 model/./ezsignfolderSendV1Request.ts
 model/./ezsignfolderSendV1Response.ts
@@ -67,6 +72,9 @@ model/./ezsignsignatureRequestCompound.ts
 model/./ezsignsignerRequest.ts
 model/./ezsignsignerRequestCompound.ts
 model/./ezsignsignerRequestCompoundContact.ts
+model/./fieldEEzsigndocumentStep.ts
+model/./fieldEEzsignfolderSendreminderfrequency.ts
+model/./fieldEEzsignfolderStep.ts
 model/./webhookEzsignDocumentCompleted.ts
 model/./webhookEzsignDocumentCompletedAllOf.ts
 model/./webhookEzsignFolderCompleted.ts

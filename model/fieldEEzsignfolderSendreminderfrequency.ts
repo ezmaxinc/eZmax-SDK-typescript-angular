@@ -9,15 +9,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsigndocumentRequest } from './ezsigndocumentRequest';
-import { EzsigndocumentRequestCompound } from './ezsigndocumentRequestCompound';
 
 
 /**
- * Request for the /1/object/ezsigndocument/createObject API Request
+ * Frequency at which reminders will be sent to signers that haven\'t signed the documents
  */
-export interface EzsigndocumentCreateObjectV1Request { 
-    objEzsigndocument?: EzsigndocumentRequest;
-    objEzsigndocumentCompound?: EzsigndocumentRequestCompound;
-}
+export type FieldEEzsignfolderSendreminderfrequency = 'None' | 'Daily' | 'Weekly';
+
+export const FieldEEzsignfolderSendreminderfrequency = {
+    None: 'None' as FieldEEzsignfolderSendreminderfrequency,
+    Daily: 'Daily' as FieldEEzsignfolderSendreminderfrequency,
+    Weekly: 'Weekly' as FieldEEzsignfolderSendreminderfrequency
+};
 
