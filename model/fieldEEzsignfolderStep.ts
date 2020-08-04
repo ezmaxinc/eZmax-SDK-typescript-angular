@@ -9,15 +9,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsigndocumentRequest } from './ezsigndocumentRequest';
-import { EzsigndocumentRequestCompound } from './ezsigndocumentRequestCompound';
 
 
 /**
- * Request for the /1/object/ezsigndocument/createObject API Request
+ * The signature step of the Ezsignfolder.
  */
-export interface EzsigndocumentCreateObjectV1Request { 
-    objEzsigndocument?: EzsigndocumentRequest;
-    objEzsigndocumentCompound?: EzsigndocumentRequestCompound;
-}
+export type FieldEEzsignfolderStep = 'Unsent' | 'Sent' | 'PartiallySigned' | 'Expired' | 'Signed' | 'Completed' | 'Archived';
+
+export const FieldEEzsignfolderStep = {
+    Unsent: 'Unsent' as FieldEEzsignfolderStep,
+    Sent: 'Sent' as FieldEEzsignfolderStep,
+    PartiallySigned: 'PartiallySigned' as FieldEEzsignfolderStep,
+    Expired: 'Expired' as FieldEEzsignfolderStep,
+    Signed: 'Signed' as FieldEEzsignfolderStep,
+    Completed: 'Completed' as FieldEEzsignfolderStep,
+    Archived: 'Archived' as FieldEEzsignfolderStep
+};
 

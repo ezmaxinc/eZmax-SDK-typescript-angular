@@ -9,15 +9,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsigndocumentRequest } from './ezsigndocumentRequest';
-import { EzsigndocumentRequestCompound } from './ezsigndocumentRequestCompound';
 
 
 /**
- * Request for the /1/object/ezsigndocument/createObject API Request
+ * Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, both Created and Modified informations will be the same.  Apikey details will only be provided if the changes were made by an API key.  
  */
-export interface EzsigndocumentCreateObjectV1Request { 
-    objEzsigndocument?: EzsigndocumentRequest;
-    objEzsigndocumentCompound?: EzsigndocumentRequestCompound;
+export interface CommonAudit { 
+    /**
+     * The id of the User that created the object.
+     */
+    fkiUserIDCreated: number;
+    /**
+     * The id of the User that made the last modification on the object.
+     */
+    fkiUserIDModified: number;
+    /**
+     * The id of the API Key that created the object.
+     */
+    fkiApikeyIDCreated?: number;
+    /**
+     * The id of the API Key that made the last modification on the object.
+     */
+    fkiApikeyIDModified?: number;
+    /**
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     */
+    dtCreatedDate: string;
+    /**
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     */
+    dtModifiedDate: string;
 }
 
