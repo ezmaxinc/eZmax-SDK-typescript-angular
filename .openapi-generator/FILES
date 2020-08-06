@@ -29,6 +29,8 @@ model/./ezsigndocumentCreateObjectV1ResponseMPayload.ts
 model/./ezsigndocumentDeleteObjectV1Response.ts
 model/./ezsigndocumentEditObjectV1Request.ts
 model/./ezsigndocumentEditObjectV1Response.ts
+model/./ezsigndocumentGetDownloadUrlV1Response.ts
+model/./ezsigndocumentGetDownloadUrlV1ResponseMPayload.ts
 model/./ezsigndocumentGetObjectV1Response.ts
 model/./ezsigndocumentGetObjectV1ResponseMPayload.ts
 model/./ezsigndocumentRequest.ts
@@ -57,6 +59,8 @@ model/./ezsignfoldersignerassociationCreateObjectV1ResponseMPayload.ts
 model/./ezsignfoldersignerassociationDeleteObjectV1Response.ts
 model/./ezsignfoldersignerassociationEditObjectV1Request.ts
 model/./ezsignfoldersignerassociationEditObjectV1Response.ts
+model/./ezsignfoldersignerassociationGetInPersonLoginUrlV1Response.ts
+model/./ezsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.ts
 model/./ezsignfoldersignerassociationGetObjectV1Response.ts
 model/./ezsignfoldersignerassociationRequest.ts
 model/./ezsignfoldersignerassociationRequestCompound.ts

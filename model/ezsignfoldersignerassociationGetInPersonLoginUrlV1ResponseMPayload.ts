@@ -9,16 +9,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CommonResponseObjDebug } from './commonResponseObjDebug';
-import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
-import { EzsignsignatureCreateObjectV1ResponseMPayload } from './ezsignsignatureCreateObjectV1ResponseMPayload';
-import { CommonResponse } from './commonResponse';
 
 
 /**
- * Response for the /1/object/ezsignsignature/createObject API Request
+ * Payload for the /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl API Request
  */
-export interface EzsignsignatureCreateObjectV1Response extends CommonResponse { 
-    mPayload: EzsignsignatureCreateObjectV1ResponseMPayload;
+export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload { 
+    /**
+     * The Url to login to the signing application.    Url will expire after 30 minutes.  
+     */
+    sLoginUrl: string;
 }
 

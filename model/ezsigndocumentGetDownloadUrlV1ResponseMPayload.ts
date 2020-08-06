@@ -9,16 +9,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CommonResponseObjDebug } from './commonResponseObjDebug';
-import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
-import { EzsignsignatureCreateObjectV1ResponseMPayload } from './ezsignsignatureCreateObjectV1ResponseMPayload';
-import { CommonResponse } from './commonResponse';
 
 
 /**
- * Response for the /1/object/ezsignsignature/createObject API Request
+ * Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl API Request
  */
-export interface EzsignsignatureCreateObjectV1Response extends CommonResponse { 
-    mPayload: EzsignsignatureCreateObjectV1ResponseMPayload;
+export interface EzsigndocumentGetDownloadUrlV1ResponseMPayload { 
+    /**
+     * The Url to the requested document.  Url will expire after 5 minutes.
+     */
+    sDownloadUrl: string;
 }
 
