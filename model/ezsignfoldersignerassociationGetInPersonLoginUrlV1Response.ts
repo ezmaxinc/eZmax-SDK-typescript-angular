@@ -11,14 +11,14 @@
  */
 import { CommonResponseObjDebug } from './commonResponseObjDebug';
 import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
-import { EzsignsignatureCreateObjectV1ResponseMPayload } from './ezsignsignatureCreateObjectV1ResponseMPayload';
+import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './ezsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload';
 import { CommonResponse } from './commonResponse';
 
 
 /**
- * Response for the /1/object/ezsignsignature/createObject API Request
+ * Response for the /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl API Request
  */
-export interface EzsignsignatureCreateObjectV1Response extends CommonResponse { 
-    mPayload: EzsignsignatureCreateObjectV1ResponseMPayload;
+export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1Response extends CommonResponse { 
+    mPayload: EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
 }
 
