@@ -3,11 +3,11 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 import { ActivesessionService } from './api/activesession.service';
-import { EzsignWebhookService } from './api/ezsignWebhook.service';
 import { EzsigndocumentService } from './api/ezsigndocument.service';
 import { EzsignfolderService } from './api/ezsignfolder.service';
 import { EzsignfoldersignerassociationService } from './api/ezsignfoldersignerassociation.service';
 import { EzsignsignatureService } from './api/ezsignsignature.service';
+import { FranchisereferalincomeService } from './api/franchisereferalincome.service';
 
 @NgModule({
   imports:      [],
