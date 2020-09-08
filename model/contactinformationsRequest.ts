@@ -12,17 +12,24 @@
 
 
 /**
- * The signature step of the Ezsignfolder.
+ * A Contactinformations Object
  */
-export type FieldEEzsignfolderStep = 'Unsent' | 'Sent' | 'PartiallySigned' | 'Expired' | 'Signed' | 'Completed' | 'Archived';
-
-export const FieldEEzsignfolderStep = {
-    Unsent: 'Unsent' as FieldEEzsignfolderStep,
-    Sent: 'Sent' as FieldEEzsignfolderStep,
-    PartiallySigned: 'PartiallySigned' as FieldEEzsignfolderStep,
-    Expired: 'Expired' as FieldEEzsignfolderStep,
-    Signed: 'Signed' as FieldEEzsignfolderStep,
-    Completed: 'Completed' as FieldEEzsignfolderStep,
-    Archived: 'Archived' as FieldEEzsignfolderStep
-};
+export interface ContactinformationsRequest { 
+    /**
+     * The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.
+     */
+    iAddressDefault: number;
+    /**
+     * The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
+     */
+    iPhoneDefault: number;
+    /**
+     * The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
+     */
+    iEmailDefault: number;
+    /**
+     * The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.
+     */
+    iWebsiteDefault: number;
+}
 
