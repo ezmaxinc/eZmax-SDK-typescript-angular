@@ -9,13 +9,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EzsignfolderRequest } from './ezsignfolderRequest';
+import { CommonResponseObjDebug } from './commonResponseObjDebug';
+import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
+import { CommonGetAutocompleteV1ResponseMPayload } from './commonGetAutocompleteV1ResponseMPayload';
+import { CommonResponse } from './commonResponse';
 
 
 /**
- * Request for the /1/object/ezsignfolder/editObject API Request
+ * Response for the /1/object/xxx/getAutocomplete API Request
  */
-export interface EzsignfolderEditObjectV1Request { 
-    objEzsignfolder?: EzsignfolderRequest;
+export interface CommonGetAutocompleteV1Response extends CommonResponse { 
+    mPayload: Array<CommonGetAutocompleteV1ResponseMPayload>;
 }
 

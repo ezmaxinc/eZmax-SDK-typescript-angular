@@ -9,39 +9,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ContactRequestCompoundAllOf } from './contactRequestCompoundAllOf';
-import { ContactRequest } from './contactRequest';
-import { ContactinformationsRequestCompound } from './contactinformationsRequestCompound';
 
 
 /**
- * A Contact Object and children to create a complete structure
+ * Generic Autocomplete Response
  */
-export interface ContactRequestCompound { 
-    objContactinformations: ContactinformationsRequestCompound;
+export interface CommonGetAutocompleteV1ResponseMPayload { 
     /**
-     * The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
+     * The Category (ie group) for the dropdown or an empty string if not categorized
      */
-    fkiContacttitleID: number;
+    group: string;
     /**
-     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * The Unique ID of the element
      */
-    fkiLanguageID: number;
+    id: string;
     /**
-     * The First name of the contact
+     * The Description of the element
      */
-    sContactFirstname: string;
-    /**
-     * The Last name of the contact
-     */
-    sContactLastname: string;
-    /**
-     * The Company name of the contact
-     */
-    sContactCompany: string;
-    /**
-     * The Birth Date of the contact
-     */
-    dtContactBirthdate?: string;
+    option: string;
 }
 

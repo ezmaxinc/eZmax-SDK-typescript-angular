@@ -10,4 +10,6 @@ export * from './ezsignsignature.service';
 import { EzsignsignatureService } from './ezsignsignature.service';
 export * from './franchisereferalincome.service';
 import { FranchisereferalincomeService } from './franchisereferalincome.service';
-export const APIS = [ActivesessionService, EzsigndocumentService, EzsignfolderService, EzsignfoldersignerassociationService, EzsignsignatureService, FranchisereferalincomeService];
+export * from './period.service';
+import { PeriodService } from './period.service';
+export const APIS = [ActivesessionService, EzsigndocumentService, EzsignfolderService, EzsignfoldersignerassociationService, EzsignsignatureService, FranchisereferalincomeService, PeriodService];
