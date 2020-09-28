@@ -9,6 +9,7 @@ api/ezsignfolder.service.ts
 api/ezsignfoldersignerassociation.service.ts
 api/ezsignsignature.service.ts
 api/franchisereferalincome.service.ts
+api/period.service.ts
 configuration.ts
 encoder.ts
 git_push.sh
@@ -18,6 +19,8 @@ model/activesessionGetCurrentV1ResponseMPayload.ts
 model/addressRequest.ts
 model/attemptResponse.ts
 model/commonAudit.ts
+model/commonGetAutocompleteV1Response.ts
+model/commonGetAutocompleteV1ResponseMPayload.ts
 model/commonResponse.ts
 model/commonResponseError.ts
 model/commonResponseObjDebug.ts
