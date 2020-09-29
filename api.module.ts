@@ -7,6 +7,7 @@ import { EzsigndocumentService } from './api/ezsigndocument.service';
 import { EzsignfolderService } from './api/ezsignfolder.service';
 import { EzsignfoldersignerassociationService } from './api/ezsignfoldersignerassociation.service';
 import { EzsignsignatureService } from './api/ezsignsignature.service';
+import { FranchisebrokerService } from './api/franchisebroker.service';
 import { FranchisereferalincomeService } from './api/franchisereferalincome.service';
 import { PeriodService } from './api/period.service';
 

@@ -17,8 +17,7 @@ import { HttpClient, HttpHeaders, HttpParams,
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
-import { FranchisereferalincomeCreateObjectV1Request } from '../model/models';
-import { FranchisereferalincomeCreateObjectV1Response } from '../model/models';
+import { CommonGetAutocompleteV1Response } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -28,7 +27,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class FranchisereferalincomeService {
+export class FranchisebrokerService {
 
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders = new HttpHeaders();
@@ -86,18 +85,25 @@ export class FranchisereferalincomeService {
     }
 
     /**
-     * Create a new Franchisereferalincome
-     * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-     * @param franchisereferalincomeCreateObjectV1Request 
+     * Retrieve Franchisebrokers and IDs
+     * Get the list of Franchisebrokers to be used in a dropdown or autocomplete control.
+     * @param sSelector The type of Franchisebrokers to return
+     * @param sQuery Allow to filter on the option value
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<FranchisereferalincomeCreateObjectV1Response>;
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<FranchisereferalincomeCreateObjectV1Response>>;
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<FranchisereferalincomeCreateObjectV1Response>>;
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (franchisereferalincomeCreateObjectV1Request === null || franchisereferalincomeCreateObjectV1Request === undefined) {
-            throw new Error('Required parameter franchisereferalincomeCreateObjectV1Request was null or undefined when calling franchisereferalincomeCreateObjectV1.');
+    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<CommonGetAutocompleteV1Response>;
+    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<CommonGetAutocompleteV1Response>>;
+    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<CommonGetAutocompleteV1Response>>;
+    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (sSelector === null || sSelector === undefined) {
+            throw new Error('Required parameter sSelector was null or undefined when calling franchisebrokerGetAutocompleteV1.');
+        }
+
+        let queryParameters = new HttpParams({encoder: this.encoder});
+        if (sQuery !== undefined && sQuery !== null) {
+          queryParameters = this.addToHttpParams(queryParameters,
+            <any>sQuery, 'sQuery');
         }
 
         let headers = this.defaultHeaders;
@@ -122,23 +128,14 @@ export class FranchisereferalincomeService {
         }
 
 
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            headers = headers.set('Content-Type', httpContentTypeSelected);
-        }
-
         let responseType: 'text' | 'json' = 'json';
         if(httpHeaderAcceptSelected && httpHeaderAcceptSelected.startsWith('text')) {
             responseType = 'text';
         }
 
-        return this.httpClient.post<FranchisereferalincomeCreateObjectV1Response>(`${this.configuration.basePath}/1/object/franchisereferalincome`,
-            franchisereferalincomeCreateObjectV1Request,
+        return this.httpClient.get<CommonGetAutocompleteV1Response>(`${this.configuration.basePath}/1/object/franchisebroker/getAutocomplete/${encodeURIComponent(String(sSelector))}`,
             {
+                params: queryParameters,
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
