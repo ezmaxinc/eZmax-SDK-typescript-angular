@@ -8,6 +8,7 @@ api/ezsigndocument.service.ts
 api/ezsignfolder.service.ts
 api/ezsignfoldersignerassociation.service.ts
 api/ezsignsignature.service.ts
+api/franchisebroker.service.ts
 api/franchisereferalincome.service.ts
 api/period.service.ts
 configuration.ts
