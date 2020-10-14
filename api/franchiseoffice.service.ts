@@ -27,7 +27,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class FranchisebrokerService {
+export class FranchiseofficeService {
 
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders = new HttpHeaders();
@@ -85,19 +85,19 @@ export class FranchisebrokerService {
     }
 
     /**
-     * Retrieve Franchisebrokers and IDs
-     * Get the list of Franchisebrokers to be used in a dropdown or autocomplete control.
-     * @param sSelector The type of Franchisebrokers to return
+     * Retrieve Franchiseoffices and IDs
+     * Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
+     * @param sSelector The type of Franchiseoffices to return
      * @param sQuery Allow to filter on the option value
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<CommonGetAutocompleteV1Response>;
-    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<CommonGetAutocompleteV1Response>>;
-    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<CommonGetAutocompleteV1Response>>;
-    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<CommonGetAutocompleteV1Response>;
+    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<CommonGetAutocompleteV1Response>>;
+    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<CommonGetAutocompleteV1Response>>;
+    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
         if (sSelector === null || sSelector === undefined) {
-            throw new Error('Required parameter sSelector was null or undefined when calling franchisebrokerGetAutocompleteV1.');
+            throw new Error('Required parameter sSelector was null or undefined when calling franchiseofficeGetAutocompleteV1.');
         }
 
         let queryParameters = new HttpParams({encoder: this.encoder});
@@ -133,7 +133,7 @@ export class FranchisebrokerService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<CommonGetAutocompleteV1Response>(`${this.configuration.basePath}/1/object/franchisebroker/getAutocomplete/${encodeURIComponent(String(sSelector))}`,
+        return this.httpClient.get<CommonGetAutocompleteV1Response>(`${this.configuration.basePath}/1/object/franchiseoffice/getAutocomplete/${encodeURIComponent(String(sSelector))}`,
             {
                 params: queryParameters,
                 responseType: <any>responseType,
