@@ -97,6 +97,7 @@ model/franchisereferalincomeCreateObjectV1Response.ts
 model/franchisereferalincomeCreateObjectV1ResponseMPayload.ts
 model/franchisereferalincomeRequest.ts
 model/franchisereferalincomeRequestCompound.ts
+model/models.ts
 model/phoneRequest.ts
 model/webhookEzsignDocumentCompleted.ts
 model/webhookEzsignDocumentCompletedAllOf.ts
@@ -104,5 +105,4 @@ model/webhookEzsignFolderCompleted.ts
 model/webhookEzsignFolderCompletedAllOf.ts
 model/webhookResponse.ts
 model/websiteRequest.ts
-model/models.ts
 variables.ts
