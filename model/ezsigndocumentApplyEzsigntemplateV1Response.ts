@@ -9,19 +9,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CommonResponseObjDebug } from './commonResponseObjDebug';
+import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
+import { CommonResponse } from './commonResponse';
 
 
 /**
- * A Website Object
+ * Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate API Request
  */
-export interface WebsiteRequest { 
-    /**
-     * The unique ID of the Websitetype.  Valid values:  |Value|Description| |-|-| |1|Website| |2|Twitter| |3|Facebook| |4|Survey|
-     */
-    fkiWebsitetypeID: number;
-    /**
-     * The URL of the website.
-     */
-    sWebsiteAddress: string;
+export interface EzsigndocumentApplyEzsigntemplateV1Response { 
+    objDebugPayload?: CommonResponseObjDebugPayload;
+    objDebug?: CommonResponseObjDebug;
 }
 

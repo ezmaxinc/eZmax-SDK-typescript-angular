@@ -12,16 +12,16 @@
 
 
 /**
- * A Website Object
+ * Payload for the /1/module/user/createEzsignuser API Request
  */
-export interface WebsiteRequest { 
+export interface UserCreateEzsignuserV1ResponseMPayload { 
     /**
-     * The unique ID of the Websitetype.  Valid values:  |Value|Description| |-|-| |1|Website| |2|Twitter| |3|Facebook| |4|Survey|
+     * An array of email addresses that succeeded.
      */
-    fkiWebsitetypeID: number;
+    a_sEmailAddressSuccess: Array<string>;
     /**
-     * The URL of the website.
+     * An array of email addresses that failed.
      */
-    sWebsiteAddress: string;
+    a_sEmailAddressFailure: Array<string>;
 }
 
