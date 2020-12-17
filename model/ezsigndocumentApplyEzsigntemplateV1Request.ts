@@ -12,16 +12,14 @@
 
 
 /**
- * A Website Object
+ * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate API Request
  */
-export interface WebsiteRequest { 
+export interface EzsigndocumentApplyEzsigntemplateV1Request { 
     /**
-     * The unique ID of the Websitetype.  Valid values:  |Value|Description| |-|-| |1|Website| |2|Twitter| |3|Facebook| |4|Survey|
+     * The unique ID of the Ezsigndocument
      */
-    fkiWebsitetypeID: number;
-    /**
-     * The URL of the website.
-     */
-    sWebsiteAddress: string;
+    fkiEzsigntemplateID: number;
+    a_sEzsigntemplatesigner: Array<string>;
+    a_pkiEzsignfoldersignerassociationID: Array<number>;
 }
 

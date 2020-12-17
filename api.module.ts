@@ -2,15 +2,16 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
-import { ActivesessionService } from './api/activesession.service';
-import { EzsigndocumentService } from './api/ezsigndocument.service';
-import { EzsignfolderService } from './api/ezsignfolder.service';
-import { EzsignfoldersignerassociationService } from './api/ezsignfoldersignerassociation.service';
-import { EzsignsignatureService } from './api/ezsignsignature.service';
-import { FranchisebrokerService } from './api/franchisebroker.service';
-import { FranchiseofficeService } from './api/franchiseoffice.service';
-import { FranchisereferalincomeService } from './api/franchisereferalincome.service';
-import { PeriodService } from './api/period.service';
+import { ModuleUserService } from './api/moduleUser.service';
+import { ObjectActivesessionService } from './api/objectActivesession.service';
+import { ObjectEzsigndocumentService } from './api/objectEzsigndocument.service';
+import { ObjectEzsignfolderService } from './api/objectEzsignfolder.service';
+import { ObjectEzsignfoldersignerassociationService } from './api/objectEzsignfoldersignerassociation.service';
+import { ObjectEzsignsignatureService } from './api/objectEzsignsignature.service';
+import { ObjectFranchisebrokerService } from './api/objectFranchisebroker.service';
+import { ObjectFranchiseofficeService } from './api/objectFranchiseoffice.service';
+import { ObjectFranchisereferalincomeService } from './api/objectFranchisereferalincome.service';
+import { ObjectPeriodService } from './api/objectPeriod.service';
 
 @NgModule({
   imports:      [],
