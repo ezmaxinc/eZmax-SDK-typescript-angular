@@ -95,6 +95,7 @@ model/fieldEEzsigndocumentStep.ts
 model/fieldEEzsignfolderSendreminderfrequency.ts
 model/fieldEEzsignfolderStep.ts
 model/fieldEPhoneType.ts
+model/fieldEUserType.ts
 model/franchisereferalincomeCreateObjectV1Request.ts
 model/franchisereferalincomeCreateObjectV1Response.ts
 model/franchisereferalincomeCreateObjectV1ResponseMPayload.ts
@@ -105,10 +106,14 @@ model/phoneRequest.ts
 model/userCreateEzsignuserV1Request.ts
 model/userCreateEzsignuserV1Response.ts
 model/userCreateEzsignuserV1ResponseMPayload.ts
+model/userResponse.ts
+model/userResponseAllOf.ts
 model/webhookEzsignDocumentCompleted.ts
 model/webhookEzsignDocumentCompletedAllOf.ts
 model/webhookEzsignFolderCompleted.ts
 model/webhookEzsignFolderCompletedAllOf.ts
 model/webhookResponse.ts
+model/webhookUserUserCreated.ts
+model/webhookUserUserCreatedAllOf.ts
 model/websiteRequest.ts
 variables.ts

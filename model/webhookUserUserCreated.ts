@@ -9,23 +9,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { UserResponse } from './userResponse';
+import { AttemptResponse } from './attemptResponse';
+import { WebhookUserUserCreatedAllOf } from './webhookUserUserCreatedAllOf';
+import { WebhookResponse } from './webhookResponse';
+import { CommonWebhook } from './commonWebhook';
 
 
 /**
- * Generic Autocomplete Response
+ * This is the base Webhook object
  */
-export interface CommonGetAutocompleteV1ResponseMPayload { 
+export interface WebhookUserUserCreated { 
+    objUser: UserResponse;
+    objWebhook: WebhookResponse;
     /**
-     * The Category (ie group) for the dropdown or an empty string if not categorized
+     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
      */
-    group: string;
-    /**
-     * The Unique ID of the element
-     */
-    id: string;
-    /**
-     * The Description of the element
-     */
-    option: string;
+    a_objAttempt: Array<AttemptResponse>;
 }
 

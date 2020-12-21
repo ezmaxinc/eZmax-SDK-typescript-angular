@@ -9,23 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { UserResponse } from './userResponse';
 
 
-/**
- * Generic Autocomplete Response
- */
-export interface CommonGetAutocompleteV1ResponseMPayload { 
-    /**
-     * The Category (ie group) for the dropdown or an empty string if not categorized
-     */
-    group: string;
-    /**
-     * The Unique ID of the element
-     */
-    id: string;
-    /**
-     * The Description of the element
-     */
-    option: string;
+export interface WebhookUserUserCreatedAllOf { 
+    objUser: UserResponse;
 }
 
