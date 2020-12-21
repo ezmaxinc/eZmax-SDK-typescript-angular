@@ -9,39 +9,59 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ContactRequestCompoundAllOf } from './contactRequestCompoundAllOf';
-import { ContactRequest } from './contactRequest';
-import { ContactinformationsRequestCompound } from './contactinformationsRequestCompound';
+import { UserResponseAllOf } from './userResponseAllOf';
+import { CommonAudit } from './commonAudit';
+import { FieldEUserType } from './fieldEUserType';
 
 
 /**
- * A Contact Object and children to create a complete structure
+ * A User Object
  */
-export interface ContactRequestCompound { 
-    objContactinformations: ContactinformationsRequestCompound;
+export interface UserResponse { 
     /**
-     * The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
+     * The unique ID of the User
      */
-    fkiContacttitleID: number;
+    pkiUserID: number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      */
     fkiLanguageID: number;
+    eUserType: FieldEUserType;
     /**
-     * The First name of the contact
+     * The First name of the user
      */
-    sContactFirstname: string;
+    sUserFirstname: string;
     /**
-     * The Last name of the contact
+     * The Last name of the user
      */
-    sContactLastname: string;
+    sUserLastname: string;
     /**
-     * The Company name of the contact
+     * The Login name of the User.
      */
-    sContactCompany: string;
+    sUserLoginname: string;
     /**
-     * The Birth Date of the contact
+     * The id of the User that created the object.
      */
-    dtContactBirthdate?: string;
+    fkiUserIDCreated: number;
+    /**
+     * The id of the User that made the last modification on the object.
+     */
+    fkiUserIDModified: number;
+    /**
+     * The id of the API Key that created the object.
+     */
+    fkiApikeyIDCreated?: number;
+    /**
+     * The id of the API Key that made the last modification on the object.
+     */
+    fkiApikeyIDModified?: number;
+    /**
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     */
+    dtCreatedDate: string;
+    /**
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     */
+    dtModifiedDate: string;
 }
 

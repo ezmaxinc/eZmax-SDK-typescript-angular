@@ -9,23 +9,30 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { FieldEUserType } from './fieldEUserType';
 
 
-/**
- * Generic Autocomplete Response
- */
-export interface CommonGetAutocompleteV1ResponseMPayload { 
+export interface UserResponseAllOf { 
     /**
-     * The Category (ie group) for the dropdown or an empty string if not categorized
+     * The unique ID of the User
      */
-    group: string;
+    pkiUserID: number;
     /**
-     * The Unique ID of the element
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      */
-    id: string;
+    fkiLanguageID: number;
+    eUserType: FieldEUserType;
     /**
-     * The Description of the element
+     * The First name of the user
      */
-    option: string;
+    sUserFirstname: string;
+    /**
+     * The Last name of the user
+     */
+    sUserLastname: string;
+    /**
+     * The Login name of the User.
+     */
+    sUserLoginname: string;
 }
 
