@@ -9,23 +9,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CommonAudit } from './commonAudit';
+import { MultilingualApikeyDescription } from './multilingualApikeyDescription';
 
 
 /**
- * An Attempt object
+ * An Apikey Object
  */
-export interface AttemptResponse { 
+export interface ApikeyResponse { 
+    objApikeyDescription: MultilingualApikeyDescription;
+    /**
+     * The secret token for the API key.  This will be returned only on creation.
+     */
+    sComputedToken?: string;
+    /**
+     * The id of the User that created the object.
+     */
+    fkiUserIDCreated: number;
+    /**
+     * The id of the User that made the last modification on the object.
+     */
+    fkiUserIDModified: number;
+    /**
+     * The id of the API Key that created the object.
+     */
+    fkiApikeyIDCreated?: number;
+    /**
+     * The id of the API Key that made the last modification on the object.
+     */
+    fkiApikeyIDModified?: number;
     /**
      * Represent a Date Time. The timezone is the one configured in the User\'s profile.
      */
-    dtAttemptStart: string;
+    dtCreatedDate: string;
     /**
-     * The Success or Failure message of the attempt when we tried to call the URL to deliver the webhook event.
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
      */
-    sAttemptResult: string;
-    /**
-     * The number of second it took to process the webhook or get an error
-     */
-    iAttemptDuration: number;
+    dtModifiedDate: string;
 }
 

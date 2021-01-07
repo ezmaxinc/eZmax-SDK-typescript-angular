@@ -9,15 +9,18 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ApikeyRequest } from './apikeyRequest';
+import { MultilingualApikeyDescription } from './multilingualApikeyDescription';
 
 
 /**
- * Payload for the /1/object/ezsignfolder/createObject API Request
+ * An Apikey Object and children to create a complete structure
  */
-export interface EzsignfolderCreateObjectV1ResponseMPayload { 
+export interface ApikeyRequestCompound { 
     /**
-     * An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
+     * The unique ID of the User
      */
-    a_pkiEzsignfolderID: Array<number>;
+    fkiUserID: number;
+    objApikeyDescription: MultilingualApikeyDescription;
 }
 

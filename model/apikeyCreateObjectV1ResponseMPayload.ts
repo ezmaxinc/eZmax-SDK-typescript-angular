@@ -9,15 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ApikeyResponse } from './apikeyResponse';
 
 
 /**
- * Payload for the /1/object/ezsignfolder/createObject API Request
+ * Payload for the /1/object/apikey/createObject API Request
  */
-export interface EzsignfolderCreateObjectV1ResponseMPayload { 
-    /**
-     * An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
-     */
-    a_pkiEzsignfolderID: Array<number>;
+export interface ApikeyCreateObjectV1ResponseMPayload { 
+    a_objApikey: Array<ApikeyResponse>;
 }
 

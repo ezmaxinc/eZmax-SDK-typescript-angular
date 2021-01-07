@@ -17,7 +17,8 @@ import { HttpClient, HttpHeaders, HttpParams,
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
-import { CommonGetAutocompleteV1Response } from '../model/models';
+import { ApikeyCreateObjectV1Request } from '../model/models';
+import { ApikeyCreateObjectV1Response } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -27,7 +28,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class ObjectPeriodService {
+export class ObjectApikeyService {
 
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders = new HttpHeaders();
@@ -85,25 +86,18 @@ export class ObjectPeriodService {
     }
 
     /**
-     * Retrieve Periods and IDs
-     * Get the list of Periods to be used in a dropdown or autocomplete control.
-     * @param sSelector The types of Periods to return
-     * @param sQuery Allow to filter on the option value
+     * Create a new Apikey
+     * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
+     * @param apikeyCreateObjectV1Request 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<CommonGetAutocompleteV1Response>;
-    public periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<CommonGetAutocompleteV1Response>>;
-    public periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<CommonGetAutocompleteV1Response>>;
-    public periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (sSelector === null || sSelector === undefined) {
-            throw new Error('Required parameter sSelector was null or undefined when calling periodGetAutocompleteV1.');
-        }
-
-        let queryParameters = new HttpParams({encoder: this.encoder});
-        if (sQuery !== undefined && sQuery !== null) {
-          queryParameters = this.addToHttpParams(queryParameters,
-            <any>sQuery, 'sQuery');
+    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<ApikeyCreateObjectV1Response>;
+    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<ApikeyCreateObjectV1Response>>;
+    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<ApikeyCreateObjectV1Response>>;
+    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (apikeyCreateObjectV1Request === null || apikeyCreateObjectV1Request === undefined) {
+            throw new Error('Required parameter apikeyCreateObjectV1Request was null or undefined when calling apikeyCreateObjectV1.');
         }
 
         let headers = this.defaultHeaders;
@@ -128,14 +122,23 @@ export class ObjectPeriodService {
         }
 
 
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            headers = headers.set('Content-Type', httpContentTypeSelected);
+        }
+
         let responseType: 'text' | 'json' = 'json';
         if(httpHeaderAcceptSelected && httpHeaderAcceptSelected.startsWith('text')) {
             responseType = 'text';
         }
 
-        return this.httpClient.get<CommonGetAutocompleteV1Response>(`${this.configuration.basePath}/1/object/period/getAutocomplete/${encodeURIComponent(String(sSelector))}`,
+        return this.httpClient.post<ApikeyCreateObjectV1Response>(`${this.configuration.basePath}/1/object/apikey`,
+            apikeyCreateObjectV1Request,
             {
-                params: queryParameters,
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
