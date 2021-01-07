@@ -12,12 +12,16 @@
 
 
 /**
- * Payload for the /1/object/ezsignfolder/createObject API Request
+ * Description of the API Key  
  */
-export interface EzsignfolderCreateObjectV1ResponseMPayload { 
+export interface MultilingualApikeyDescription { 
     /**
-     * An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
+     * Value in French
      */
-    a_pkiEzsignfolderID: Array<number>;
+    sApikeyDescription1?: string;
+    /**
+     * Value in English
+     */
+    sApikeyDescription2?: string;
 }
 

@@ -5,6 +5,7 @@ api.module.ts
 api/api.ts
 api/moduleUser.service.ts
 api/objectActivesession.service.ts
+api/objectApikey.service.ts
 api/objectEzsigndocument.service.ts
 api/objectEzsignfolder.service.ts
 api/objectEzsignfoldersignerassociation.service.ts
@@ -20,6 +21,12 @@ index.ts
 model/activesessionGetCurrentV1Response.ts
 model/activesessionGetCurrentV1ResponseMPayload.ts
 model/addressRequest.ts
+model/apikeyCreateObjectV1Request.ts
+model/apikeyCreateObjectV1Response.ts
+model/apikeyCreateObjectV1ResponseMPayload.ts
+model/apikeyRequest.ts
+model/apikeyRequestCompound.ts
+model/apikeyResponse.ts
 model/attemptResponse.ts
 model/commonAudit.ts
 model/commonGetAutocompleteV1Response.ts
@@ -102,6 +109,7 @@ model/franchisereferalincomeCreateObjectV1ResponseMPayload.ts
 model/franchisereferalincomeRequest.ts
 model/franchisereferalincomeRequestCompound.ts
 model/models.ts
+model/multilingualApikeyDescription.ts
 model/phoneRequest.ts
 model/userCreateEzsignuserV1Request.ts
 model/userCreateEzsignuserV1Response.ts

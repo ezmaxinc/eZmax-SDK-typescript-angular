@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { ModuleUserService } from './api/moduleUser.service';
 import { ObjectActivesessionService } from './api/objectActivesession.service';
+import { ObjectApikeyService } from './api/objectApikey.service';
 import { ObjectEzsigndocumentService } from './api/objectEzsigndocument.service';
 import { ObjectEzsignfolderService } from './api/objectEzsignfolder.service';
 import { ObjectEzsignfoldersignerassociationService } from './api/objectEzsignfoldersignerassociation.service';
