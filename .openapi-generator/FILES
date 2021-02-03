@@ -124,4 +124,7 @@ model/webhookResponse.ts
 model/webhookUserUserCreated.ts
 model/webhookUserUserCreatedAllOf.ts
 model/websiteRequest.ts
+ng-package.json
+package.json
+tsconfig.json
 variables.ts
