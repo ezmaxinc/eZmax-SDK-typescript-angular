@@ -1,7 +1,7 @@
 {
-  "name": "ezmaxinc-sdk-typescrit-angular",
-  "version": "1.0.27",
-  "description": "OpenAPI client for ezmaxinc-sdk-typescrit-angular",
+  "name": "ezmax-sdk-typescript-angular",
+  "version": "1.0.28",
+  "description": "OpenAPI client for ezmax-sdk-typescript-angular",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
     "openapi-client",
