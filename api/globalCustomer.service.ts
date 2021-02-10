@@ -17,8 +17,8 @@ import { HttpClient, HttpHeaders, HttpParams,
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
-import { ApikeyCreateObjectV1Request } from '../model/models';
-import { ApikeyCreateObjectV1Response } from '../model/models';
+import { CommonResponseError } from '../model/models';
+import { GlobalCustomerGetEndpointV1Response } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -28,7 +28,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class ObjectApikeyService {
+export class GlobalCustomerService {
 
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders = new HttpHeaders();
@@ -86,18 +86,25 @@ export class ObjectApikeyService {
     }
 
     /**
-     * Create a new Apikey
-     * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-     * @param apikeyCreateObjectV1Request 
+     * Get customer endpoint
+     * Retrieve the customer\&#39;s specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer\&#39;s data is stored.
+     * @param pksCustomerCode The customer code assigned to your account
+     * @param sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<ApikeyCreateObjectV1Response>;
-    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<ApikeyCreateObjectV1Response>>;
-    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<ApikeyCreateObjectV1Response>>;
-    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (apikeyCreateObjectV1Request === null || apikeyCreateObjectV1Request === undefined) {
-            throw new Error('Required parameter apikeyCreateObjectV1Request was null or undefined when calling apikeyCreateObjectV1.');
+    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<GlobalCustomerGetEndpointV1Response>;
+    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<GlobalCustomerGetEndpointV1Response>>;
+    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<GlobalCustomerGetEndpointV1Response>>;
+    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (pksCustomerCode === null || pksCustomerCode === undefined) {
+            throw new Error('Required parameter pksCustomerCode was null or undefined when calling globalCustomerGetEndpointV1.');
+        }
+
+        let queryParameters = new HttpParams({encoder: this.encoder});
+        if (sInfrastructureproductCode !== undefined && sInfrastructureproductCode !== null) {
+          queryParameters = this.addToHttpParams(queryParameters,
+            <any>sInfrastructureproductCode, 'sInfrastructureproductCode');
         }
 
         let headers = this.defaultHeaders;
@@ -122,23 +129,14 @@ export class ObjectApikeyService {
         }
 
 
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            headers = headers.set('Content-Type', httpContentTypeSelected);
-        }
-
         let responseType: 'text' | 'json' = 'json';
         if(httpHeaderAcceptSelected && httpHeaderAcceptSelected.startsWith('text')) {
             responseType = 'text';
         }
 
-        return this.httpClient.post<ApikeyCreateObjectV1Response>(`${this.configuration.basePath}/1/object/apikey`,
-            apikeyCreateObjectV1Request,
+        return this.httpClient.get<GlobalCustomerGetEndpointV1Response>(`${this.configuration.basePath}/1/customer/${encodeURIComponent(String(pksCustomerCode))}/endpoint`,
             {
+                params: queryParameters,
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

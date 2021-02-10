@@ -9,16 +9,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CommonResponseObjDebug } from './commonResponseObjDebug';
-import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
-import { CommonResponse } from './commonResponse';
 
 
 /**
- * Response for the /1/object/ezsignfolder/deleteObject API Request
+ * Response for the /1/customer/{pksCustomerCode}/endpoint API Request
  */
-export interface EzsignfolderDeleteObjectV1Response { 
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    objDebug?: CommonResponseObjDebug;
+export interface GlobalCustomerGetEndpointV1Response { 
+    /**
+     * The endpoint\'s URL
+     */
+    sEndpointURL: string;
 }
 

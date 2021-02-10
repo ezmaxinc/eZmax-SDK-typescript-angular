@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
+import { GlobalCustomerService } from './api/globalCustomer.service';
 import { ModuleUserService } from './api/moduleUser.service';
 import { ObjectActivesessionService } from './api/objectActivesession.service';
 import { ObjectApikeyService } from './api/objectApikey.service';
