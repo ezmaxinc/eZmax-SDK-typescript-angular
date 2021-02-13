@@ -17,8 +17,7 @@ import { HttpClient, HttpHeaders, HttpParams,
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
-import { FranchisereferalincomeCreateObjectV1Request } from '../model/models';
-import { FranchisereferalincomeCreateObjectV1Response } from '../model/models';
+import { CommonResponseError } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -28,7 +27,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class ObjectFranchisereferalincomeService {
+export class ModuleSsprService {
 
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders = new HttpHeaders();
@@ -86,19 +85,15 @@ export class ObjectFranchisereferalincomeService {
     }
 
     /**
-     * Create a new Franchisereferalincome
-     * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-     * @param franchisereferalincomeCreateObjectV1Request 
+     * Remind of forgotten username(s)
+     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<FranchisereferalincomeCreateObjectV1Response>;
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<FranchisereferalincomeCreateObjectV1Response>>;
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<FranchisereferalincomeCreateObjectV1Response>>;
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (franchisereferalincomeCreateObjectV1Request === null || franchisereferalincomeCreateObjectV1Request === undefined) {
-            throw new Error('Required parameter franchisereferalincomeCreateObjectV1Request was null or undefined when calling franchisereferalincomeCreateObjectV1.');
-        }
+    public ssprRemindUsernamesV1(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<any>;
+    public ssprRemindUsernamesV1(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<any>>;
+    public ssprRemindUsernamesV1(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<any>>;
+    public ssprRemindUsernamesV1(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
 
         let headers = this.defaultHeaders;
 
@@ -122,22 +117,13 @@ export class ObjectFranchisereferalincomeService {
         }
 
 
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            headers = headers.set('Content-Type', httpContentTypeSelected);
-        }
-
         let responseType: 'text' | 'json' = 'json';
         if(httpHeaderAcceptSelected && httpHeaderAcceptSelected.startsWith('text')) {
             responseType = 'text';
         }
 
-        return this.httpClient.post<FranchisereferalincomeCreateObjectV1Response>(`${this.configuration.basePath}/1/object/franchisereferalincome`,
-            franchisereferalincomeCreateObjectV1Request,
+        return this.httpClient.post<any>(`${this.configuration.basePath}/1/module/sspr/remindUsernames`,
+            null,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,

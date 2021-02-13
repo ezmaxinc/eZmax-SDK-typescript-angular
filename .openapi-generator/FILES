@@ -4,6 +4,7 @@ README.md
 api.module.ts
 api/api.ts
 api/globalCustomer.service.ts
+api/moduleSspr.service.ts
 api/moduleUser.service.ts
 api/objectActivesession.service.ts
 api/objectApikey.service.ts
