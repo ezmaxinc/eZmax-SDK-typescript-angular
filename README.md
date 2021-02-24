@@ -1,4 +1,4 @@
-## ezmax-sdk-typescript-angular@1.0.30
+## ezmax-sdk-typescript-angular@1.0.31
 
 ### Building
 
@@ -19,7 +19,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install ezmax-sdk-typescript-angular@1.0.30 --save
+npm install ezmax-sdk-typescript-angular@1.0.31 --save
 ```
 
 _without publishing (not recommended):_
@@ -120,7 +120,7 @@ export class AppModule {}
 import { DefaultApi } from 'ezmax-sdk-typescript-angular';
 
 export class AppComponent {
-	 constructor(private apiGateway: DefaultApi) { }
+    constructor(private apiGateway: DefaultApi) { }
 }
 ```
 
