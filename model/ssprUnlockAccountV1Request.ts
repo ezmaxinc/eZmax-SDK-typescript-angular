@@ -9,32 +9,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CommonAudit } from './commonAudit';
-import { FieldEUserType } from './fieldEUserType';
+import { FieldEUserTypeSSPR } from './fieldEUserTypeSSPR';
 
 
-export interface UserResponseAllOf { 
+/**
+ * Request for the /1/module/sspr/unlockAccount API Request
+ */
+export interface SsprUnlockAccountV1Request { 
     /**
-     * The unique ID of the User
+     * The customer code assigned to your account
      */
-    pkiUserID: number;
+    pksCustomerCode: string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      */
     fkiLanguageID: number;
-    eUserType: FieldEUserType;
+    eUserTypeSSPR: FieldEUserTypeSSPR;
     /**
-     * The First name of the user
+     * The email address.
      */
-    sUserFirstname: string;
-    /**
-     * The Last name of the user
-     */
-    sUserLastname: string;
+    sEmailAddress?: string;
     /**
      * The Login name of the User.
      */
-    sUserLoginname: string;
-    objAudit: CommonAudit;
+    sUserLoginname?: string;
+    /**
+     * Hex Encoded Secret SSPR token
+     */
+    binUserSSPRtoken: string;
 }
 

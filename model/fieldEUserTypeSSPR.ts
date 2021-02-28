@@ -12,12 +12,12 @@
 
 
 /**
- * Generic Error Message
+ * The user type of the User for SSPR
  */
-export interface CommonResponseError { 
-    /**
-     * More detail about the error
-     */
-    sErrorMessage: string;
-}
+export type FieldEUserTypeSSPR = 'EzsignUser' | 'Native';
+
+export const FieldEUserTypeSSPR = {
+    EzsignUser: 'EzsignUser' as FieldEUserTypeSSPR,
+    Native: 'Native' as FieldEUserTypeSSPR
+};
 

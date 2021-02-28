@@ -51,8 +51,6 @@ model/ezsigndocumentCreateObjectV1Request.ts
 model/ezsigndocumentCreateObjectV1Response.ts
 model/ezsigndocumentCreateObjectV1ResponseMPayload.ts
 model/ezsigndocumentDeleteObjectV1Response.ts
-model/ezsigndocumentEditObjectV1Request.ts
-model/ezsigndocumentEditObjectV1Response.ts
 model/ezsigndocumentGetDownloadUrlV1Response.ts
 model/ezsigndocumentGetDownloadUrlV1ResponseMPayload.ts
 model/ezsigndocumentGetObjectV1Response.ts
@@ -66,8 +64,6 @@ model/ezsignfolderCreateObjectV1Request.ts
 model/ezsignfolderCreateObjectV1Response.ts
 model/ezsignfolderCreateObjectV1ResponseMPayload.ts
 model/ezsignfolderDeleteObjectV1Response.ts
-model/ezsignfolderEditObjectV1Request.ts
-model/ezsignfolderEditObjectV1Response.ts
 model/ezsignfolderGetObjectV1Response.ts
 model/ezsignfolderGetObjectV1ResponseMPayload.ts
 model/ezsignfolderRequest.ts
@@ -81,8 +77,6 @@ model/ezsignfoldersignerassociationCreateObjectV1Request.ts
 model/ezsignfoldersignerassociationCreateObjectV1Response.ts
 model/ezsignfoldersignerassociationCreateObjectV1ResponseMPayload.ts
 model/ezsignfoldersignerassociationDeleteObjectV1Response.ts
-model/ezsignfoldersignerassociationEditObjectV1Request.ts
-model/ezsignfoldersignerassociationEditObjectV1Response.ts
 model/ezsignfoldersignerassociationGetInPersonLoginUrlV1Response.ts
 model/ezsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.ts
 model/ezsignfoldersignerassociationGetObjectV1Response.ts
@@ -92,8 +86,6 @@ model/ezsignsignatureCreateObjectV1Request.ts
 model/ezsignsignatureCreateObjectV1Response.ts
 model/ezsignsignatureCreateObjectV1ResponseMPayload.ts
 model/ezsignsignatureDeleteObjectV1Response.ts
-model/ezsignsignatureEditObjectV1Request.ts
-model/ezsignsignatureEditObjectV1Response.ts
 model/ezsignsignatureGetObjectV1Response.ts
 model/ezsignsignatureRequest.ts
 model/ezsignsignatureRequestCompound.ts
@@ -105,6 +97,7 @@ model/fieldEEzsignfolderSendreminderfrequency.ts
 model/fieldEEzsignfolderStep.ts
 model/fieldEPhoneType.ts
 model/fieldEUserType.ts
+model/fieldEUserTypeSSPR.ts
 model/franchisereferalincomeCreateObjectV1Request.ts
 model/franchisereferalincomeCreateObjectV1Response.ts
 model/franchisereferalincomeCreateObjectV1ResponseMPayload.ts
@@ -114,6 +107,19 @@ model/globalCustomerGetEndpointV1Response.ts
 model/models.ts
 model/multilingualApikeyDescription.ts
 model/phoneRequest.ts
+model/ssprResetPasswordRequestV1Request.ts
+model/ssprResetPasswordV1Request.ts
+model/ssprSendUsernamesV1Request.ts
+model/ssprUnlockAccountRequestV1Request.ts
+model/ssprUnlockAccountV1Request.ts
+model/uNUSEDEzsigndocumentEditObjectV1Request.ts
+model/uNUSEDEzsigndocumentEditObjectV1Response.ts
+model/uNUSEDEzsignfolderEditObjectV1Request.ts
+model/uNUSEDEzsignfolderEditObjectV1Response.ts
+model/uNUSEDEzsignfoldersignerassociationEditObjectV1Request.ts
+model/uNUSEDEzsignfoldersignerassociationEditObjectV1Response.ts
+model/uNUSEDEzsignsignatureEditObjectV1Request.ts
+model/uNUSEDEzsignsignatureEditObjectV1Response.ts
 model/userCreateEzsignuserV1Request.ts
 model/userCreateEzsignuserV1Response.ts
 model/userCreateEzsignuserV1ResponseMPayload.ts
