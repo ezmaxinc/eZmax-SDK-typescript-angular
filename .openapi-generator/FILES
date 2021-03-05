@@ -112,6 +112,7 @@ model/ssprResetPasswordV1Request.ts
 model/ssprSendUsernamesV1Request.ts
 model/ssprUnlockAccountRequestV1Request.ts
 model/ssprUnlockAccountV1Request.ts
+model/ssprValidateTokenV1Request.ts
 model/uNUSEDEzsigndocumentEditObjectV1Request.ts
 model/uNUSEDEzsigndocumentEditObjectV1Response.ts
 model/uNUSEDEzsignfolderEditObjectV1Request.ts

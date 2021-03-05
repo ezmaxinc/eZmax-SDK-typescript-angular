@@ -13,9 +13,9 @@ import { FieldEUserTypeSSPR } from './fieldEUserTypeSSPR';
 
 
 /**
- * Request for the /1/module/sspr/resetPassword API Request
+ * Request for the /1/module/sspr/validateToken API Request
  */
-export interface SsprResetPasswordV1Request { 
+export interface SsprValidateTokenV1Request { 
     /**
      * The customer code assigned to your account
      */
@@ -37,9 +37,5 @@ export interface SsprResetPasswordV1Request {
      * Hex Encoded Secret SSPR token
      */
     binUserSSPRtoken: string;
-    /**
-     * A Password.  Must meet complexity requirements
-     */
-    sPassword: string;
 }
 
