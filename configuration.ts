@@ -61,7 +61,11 @@ export class Configuration {
         // init default Authorization credential
         if (!this.credentials['Authorization']) {
             this.credentials['Authorization'] = () => {
-                return this.apiKeys['Authorization'] || this.apiKeys['Authorization'];
+                if (this.apiKeys === null || this.apiKeys === undefined) {
+                    return undefined;
+                } else {
+                    return this.apiKeys['Authorization'] || this.apiKeys['Authorization'];
+                }
             };
         }
     }
