@@ -17,7 +17,9 @@ import { HttpClient, HttpHeaders, HttpParams,
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
-import { CommonGetAutocompleteV1Response } from '../model/models';
+import { AuthenticateAuthenticateV2Request } from '../model/models';
+import { AuthenticateAuthenticateV2Response } from '../model/models';
+import { CommonResponseError } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -27,7 +29,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class ObjectFranchiseofficeService {
+export class ModuleAuthenticateService {
 
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders = new HttpHeaders();
@@ -85,25 +87,22 @@ export class ObjectFranchiseofficeService {
     }
 
     /**
-     * Retrieve Franchiseoffices and IDs
-     * Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
-     * @param sSelector The type of Franchiseoffices to return
-     * @param sQuery Allow to filter on the option value
+     * Authenticate a user
+     * This endpoint authenticates a user.
+     * @param eSessionType 
+     * @param authenticateAuthenticateV2Request 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<CommonGetAutocompleteV1Response>;
-    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<CommonGetAutocompleteV1Response>>;
-    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<CommonGetAutocompleteV1Response>>;
-    public franchiseofficeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
-        if (sSelector === null || sSelector === undefined) {
-            throw new Error('Required parameter sSelector was null or undefined when calling franchiseofficeGetAutocompleteV1.');
+    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<AuthenticateAuthenticateV2Response>;
+    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<AuthenticateAuthenticateV2Response>>;
+    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<AuthenticateAuthenticateV2Response>>;
+    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+        if (eSessionType === null || eSessionType === undefined) {
+            throw new Error('Required parameter eSessionType was null or undefined when calling authenticateAuthenticateV2.');
         }
-
-        let queryParameters = new HttpParams({encoder: this.encoder});
-        if (sQuery !== undefined && sQuery !== null) {
-          queryParameters = this.addToHttpParams(queryParameters,
-            <any>sQuery, 'sQuery');
+        if (authenticateAuthenticateV2Request === null || authenticateAuthenticateV2Request === undefined) {
+            throw new Error('Required parameter authenticateAuthenticateV2Request was null or undefined when calling authenticateAuthenticateV2.');
         }
 
         let headers = this.defaultHeaders;
@@ -128,14 +127,23 @@ export class ObjectFranchiseofficeService {
         }
 
 
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            headers = headers.set('Content-Type', httpContentTypeSelected);
+        }
+
         let responseType_: 'text' | 'json' = 'json';
         if(httpHeaderAcceptSelected && httpHeaderAcceptSelected.startsWith('text')) {
             responseType_ = 'text';
         }
 
-        return this.httpClient.get<CommonGetAutocompleteV1Response>(`${this.configuration.basePath}/1/object/franchiseoffice/getAutocomplete/${encodeURIComponent(String(sSelector))}`,
+        return this.httpClient.post<AuthenticateAuthenticateV2Response>(`${this.configuration.basePath}/2/module/authenticate/authenticate/ezsignuser/${encodeURIComponent(String(eSessionType))}`,
+            authenticateAuthenticateV2Request,
             {
-                params: queryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
