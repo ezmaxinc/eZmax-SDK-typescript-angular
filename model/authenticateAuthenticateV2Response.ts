@@ -11,15 +11,15 @@
  */
 import { CommonResponseObjDebug } from './commonResponseObjDebug';
 import { CommonResponseObjDebugPayload } from './commonResponseObjDebugPayload';
-import { ApikeyCreateObjectV1ResponseMPayload } from './apikeyCreateObjectV1ResponseMPayload';
+import { AuthenticateAuthenticateV2ResponseMPayload } from './authenticateAuthenticateV2ResponseMPayload';
 import { CommonResponse } from './commonResponse';
 
 
 /**
- * Response for the /1/object/apikey/createObject API Request
+ * Response for the /2/module/authenticate/authenticate API Request
  */
-export interface ApikeyCreateObjectV1Response { 
-    mPayload: ApikeyCreateObjectV1ResponseMPayload;
+export interface AuthenticateAuthenticateV2Response { 
+    mPayload: AuthenticateAuthenticateV2ResponseMPayload;
     objDebugPayload?: CommonResponseObjDebugPayload;
     objDebug?: CommonResponseObjDebug;
 }

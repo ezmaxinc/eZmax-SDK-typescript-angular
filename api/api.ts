@@ -1,5 +1,7 @@
 export * from './globalCustomer.service';
 import { GlobalCustomerService } from './globalCustomer.service';
+export * from './moduleAuthenticate.service';
+import { ModuleAuthenticateService } from './moduleAuthenticate.service';
 export * from './moduleSspr.service';
 import { ModuleSsprService } from './moduleSspr.service';
 export * from './moduleUser.service';
@@ -24,4 +26,4 @@ export * from './objectFranchisereferalincome.service';
 import { ObjectFranchisereferalincomeService } from './objectFranchisereferalincome.service';
 export * from './objectPeriod.service';
 import { ObjectPeriodService } from './objectPeriod.service';
-export const APIS = [GlobalCustomerService, ModuleSsprService, ModuleUserService, ObjectActivesessionService, ObjectApikeyService, ObjectEzsigndocumentService, ObjectEzsignfolderService, ObjectEzsignfoldersignerassociationService, ObjectEzsignsignatureService, ObjectFranchisebrokerService, ObjectFranchiseofficeService, ObjectFranchisereferalincomeService, ObjectPeriodService];
+export const APIS = [GlobalCustomerService, ModuleAuthenticateService, ModuleSsprService, ModuleUserService, ObjectActivesessionService, ObjectApikeyService, ObjectEzsigndocumentService, ObjectEzsignfolderService, ObjectEzsignfoldersignerassociationService, ObjectEzsignsignatureService, ObjectFranchisebrokerService, ObjectFranchiseofficeService, ObjectFranchisereferalincomeService, ObjectPeriodService];

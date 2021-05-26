@@ -9,10 +9,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { UserResponse } from './userResponse';
 
 
-export interface WebhookUserUserCreatedAllOf { 
-    objUser: UserResponse;
+/**
+ * Payload for the /2/module/authenticate/authenticate API Request
+ */
+export interface AuthenticateAuthenticateV2ResponseMPayload { 
+    /**
+     * The Authorization key
+     */
+    sAuthorization: string;
+    /**
+     * The secret key
+     */
+    sSecret: string;
 }
 
