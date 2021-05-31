@@ -99,6 +99,7 @@ model/ezsignsignerRequestCompoundContact.ts
 model/fieldEEzsigndocumentStep.ts
 model/fieldEEzsignfolderSendreminderfrequency.ts
 model/fieldEEzsignfolderStep.ts
+model/fieldEEzsignsignatureType.ts
 model/fieldEPhoneType.ts
 model/fieldEUserType.ts
 model/fieldEUserTypeSSPR.ts
