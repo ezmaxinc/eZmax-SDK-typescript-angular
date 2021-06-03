@@ -1,4 +1,4 @@
-## ezmax-sdk-typescript-angular@1.0.45
+## ezmax-sdk-typescript-angular@1.0.46
 
 ### Building
 
@@ -19,7 +19,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install ezmax-sdk-typescript-angular@1.0.45 --save
+npm install ezmax-sdk-typescript-angular@1.0.46 --save
 ```
 
 _without publishing (not recommended):_
